@@ -173,3 +173,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+mlruns
+save_data
+mlflow.db
+rf_feature_importance.png
+models
