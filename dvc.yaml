@@ -13,3 +13,13 @@ stages:
       - features.chi2percentile
       - features.train_path
       - features.test_path
+
+  iris_prepare:
+    cmd: python src/preprocessing.py
+    deps:
+      - data/iris.csv
+      - src/preprocessing.py
+    outs:
+      - data/iris_pipeline.pkl
+      - data/iris_processed_train_data.csv
+      - data/iris_processed_test_data.csv

@@ -3,3 +3,7 @@
 /pipeline.pkl
 /processed_train_data.csv
 /processed_test_data.csv
+/iris_pipeline.pkl
+/iris_processed_train_data.csv
+/iris_processed_test_data.csv
+/iris.csv

@@ -33,3 +33,27 @@ stages:
       hash: md5
       md5: adf63b6ce20f7ee74f63d5dabb325226
       size: 10829967
+  iris_prepare:
+    cmd: python src/preprocessing.py
+    deps:
+    - path: data/iris.csv
+      hash: md5
+      md5: 4d301abed5efe50eccda350cde38e0eb
+      size: 2777
+    - path: src/preprocessing.py
+      hash: md5
+      md5: 0d8b81c289c5ffa2368aa08bc1a0bd9e
+      size: 1458
+    outs:
+    - path: data/iris_pipeline.pkl
+      hash: md5
+      md5: beef60c316e049133bd03c2b163a0a0c
+      size: 797
+    - path: data/iris_processed_test_data.csv
+      hash: md5
+      md5: b5a86da8a253dd53f0dcfed943091363
+      size: 2472
+    - path: data/iris_processed_train_data.csv
+      hash: md5
+      md5: a5939966ea79e44970a00cda9b9b7646
+      size: 9697
