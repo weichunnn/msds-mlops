@@ -156,19 +156,10 @@ class TrainingFlow(FlowSpec):
             model_name
         )
         
-        # Set the model to staging
-        client = mlflow.tracking.MlflowClient()
-        client.transition_model_version_stage(
-            name=model_name,
-            version=registered_model.version,
-            stage="Staging"
-        )
-        
         self.model_name = model_name
         self.model_version = registered_model.version
 
         print(f"Model registered with MLFlow, run_id: {self.run_id}")
-        print(f"Model registered in registry as '{model_name}' version {registered_model.version} in 'Staging' stage")
         print(f"Model saved to {model_path} and logged as artifact in 'my_models'")
         
         if hasattr(self, 'register_error') and self.register_error:
