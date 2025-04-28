@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reddit-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reddit
+  template:
+    metadata:
+      labels:
+        app: reddit
+    spec:
+      containers:
+        - name: reddit
+          # image: reddit-fastapi-v2:latest
+          # imagePullPolicy: Never
+          image: gcr.io/mlops-wtan12-metaflow/reddit-fastapi-v2:amd64
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
